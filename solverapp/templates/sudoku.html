@@ -27,6 +27,7 @@
   <colgroup><col><col><col>
 
 
+
   {% for i in '123456789' %}
 
 {% ifequal  i "4"  %}
@@ -53,5 +54,17 @@
 <button type="submit"  style="width:90">solvesudoku</button>
 
 </body>
-
+{%if sudo %}
+<script>
+var solved={{ sudo }}
+console.log(solved)
+p=0
+for(var i=1;i<=9;i++){
+  for(var j=1;j<=9;j++){
+    document.getElementsByName(parseInt(i.toString()+j.toString()))[0].value=solved[p]
+   
+  }
+}
+</script>
+{% endif %}
 </html>
